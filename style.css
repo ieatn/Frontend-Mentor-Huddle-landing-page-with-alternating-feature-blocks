@@ -1,41 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
 :root {
     --Pink: hsl(322, 100%, 66%);
     --Very-Pale-Cyan: hsl(193, 100%, 96%);
     --Very-Dark-Cyan: hsl(192, 100%, 9%);
     --Grayish-Blue: hsl(208, 11%, 55%);
-    --ff-p: 'Open Sans', sans-serif;
     --ff-h1: 'Poppins', sans-serif;
+    --ff-p: 'Open Sans', sans-serif;
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/* for p */
 body {
     font-size: 1.2rem;
     font-family: var(--ff-p);
     color: var(--Very-Dark-Cyan);
 }
-h1, 
-h2 {
+h1 {
     font-family: var(--ff-h1);
 }
 p {
     opacity: 0.6;
+    line-height: 30px;
 }
 img {
     max-width: 100%;
 }
 .btn {
+    width: 200px;
+    height: 50px;
+    font-size: 1rem;
     font-weight: 700;
-    border-radius: 50px;
-    background-color: white;
     border: none;
-    font-size: 16px;
-    padding: 15px 60px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    border-radius: 4rem;
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
 }
 .btn-primary {
@@ -44,25 +49,27 @@ img {
 }
 .container {
     width: 1000px;
-    /* when window is smaller than 1000px just fill screen */
     max-width: 100%;
     margin: 0 auto;
-    padding: 0 20px;
-}   
+    padding: 0 2rem;
+}
 header {
     background-image: url('images/bg-hero-desktop.svg');
-    background-position: center center;
-    background-size: cover;
     background-color: var(--Very-Pale-Cyan);
-    padding: 40px 0;
+    background-position: center;
+    width: 100%;
+    padding: 4rem 0;
+}
+.hero {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 .flex {
     display: flex;
     align-items: center;
 }
-/* make sure 50/50 space for image and text */
-/* also need for footer ul */
-.flex > div, 
+.flex > div,
 .flex > ul {
     flex: 1;
 }
@@ -70,59 +77,59 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 2rem 0;
 }
-.box {
-    background-color: white;
+.card {
+    border-radius: 0.5rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-    border-radius: 15px;
-    margin: 40px 0;
-    padding: 60px;
+    margin: 3rem;
+    padding: 5rem;
 }
-.box img {
+.card img {
     width: 80%;
 }
-.small-box {
-    display: inline-block; 
-    margin-bottom: -50%;
-} 
-.center {
+.call-to-action {
     text-align: center;
+    display: inline-block;
+    margin-bottom: -50%;
+    background-color: white;
 }
 footer {
-    background-color: var(--Very-Dark-Cyan);
+    background-color: var(--Very-Dark-Cyan); 
     color: white;
-    padding: 180px 0 60px;
+    padding-top: 12rem;
 }
 footer ul {
     list-style: none;
 }
 footer ul li {
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
 }
+/* brings social media to top */
 .align-start {
     align-items: flex-start;
 }
-footer .circle {
-    width: 40px;
-    height: 40px;
-    border: solid white 1px;
-    border-radius: 50px;
-    display: inline-flex;
-    text-decoration: none;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    margin-right: 10px;
-}
-footer .social-media {
+.social-media {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 0.5rem;
+}
+.social-media a {
+    width: 40px;
+    height: 40px;
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 100px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
 }
 footer p {
     text-align: right;
 }
-
 @media (max-width: 768px) {
     body {
         text-align: center;
@@ -130,10 +137,9 @@ footer p {
     .flex {
         flex-direction: column;
     }
-    .header-img {
-        margin-top: 30px;
+    .hero-img {
+        margin-top: 3rem;
     }
-    /* second box has text first */
     .reverse-mobile {
         flex-direction: column-reverse;
     }
